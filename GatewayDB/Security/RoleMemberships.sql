@@ -1,0 +1,74 @@
+﻿ALTER ROLE [db_owner] ADD MEMBER [NEIRELOCATION\Gateway Developer];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NEIRELOCATION\Senior Gateway Developer];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NEIRELOCATION\DKW01];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NEIRELOCATION\SQL Developers];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NEIRELOCATION\GTM01];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NEIRELOCATION\SXC02];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NEIRELOCATION\JET01];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NEIRELOCATION\AAH01];
+
+
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [GatewayAdmin];
+
+
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [NEIRELOCATION\Reporting];
+
+
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [cold_fusion];
+
+
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [NEIRELOCATION\AAH01];
+
+
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [NEIRELOCATION\Gateway Release Manager];
+
+
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [NEIRELOCATION\MNM01];
+
+
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [GatewayAdmin];
+
+
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [cold_fusion];
+
+
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [NEIRELOCATION\AAH01];
+
+
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [NEIRELOCATION\Gateway Release Manager];
+
+
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [NEIRELOCATION\MNM01];
+

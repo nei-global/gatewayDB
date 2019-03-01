@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>GatewayDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{4ba7403d-fefa-40e1-a705-2af1b1226807}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>GatewayDB</RootNamespace>
+    <AssemblyName>GatewayDB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="NEIRELOCATION_SRJ01\" />
+    <Folder Include="NEIRELOCATION_SRJ01\User Defined Types\" />
+    <Folder Include="dbo\Synonyms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\gg_svc_cart.sql" />
+    <Build Include="dbo\Tables\utility_log_application.sql" />
+    <Build Include="dbo\Tables\ee_svc_detail.sql" />
+    <Build Include="dbo\Tables\gg_nav_sub.sql" />
+    <Build Include="dbo\Tables\travel_request_info.sql" />
+    <Build Include="dbo\Tables\login.sql" />
+    <Build Include="dbo\Tables\ee_er_item_online.sql" />
+    <Build Include="dbo\Tables\gg_nav.sql" />
+    <Build Include="dbo\Tables\Filter_Type.sql" />
+    <Build Include="dbo\Tables\ee_profile_online_old.sql" />
+    <Build Include="dbo\Tables\utility_log_level.sql" />
+    <Build Include="dbo\Tables\ee_login.sql" />
+    <Build Include="dbo\Tables\refresh_token.sql" />
+    <Build Include="dbo\Tables\utility_log.sql" />
+    <Build Include="dbo\Tables\login_note.sql" />
+    <Build Include="dbo\Tables\login_note_description.sql" />
+    <Build Include="dbo\Tables\co_logo.sql" />
+    <Build Include="dbo\Tables\ee_er_item_online_log.sql" />
+    <Build Include="dbo\Tables\gg_ee_calendar.sql" />
+    <Build Include="dbo\Tables\ee_er_online_log.sql" />
+    <Build Include="dbo\Tables\gg_notification_type.sql" />
+    <Build Include="dbo\Tables\login_password_history.sql" />
+    <Build Include="dbo\Tables\login_security_answer.sql" />
+    <Build Include="dbo\Tables\gg_notification_log.sql" />
+    <Build Include="dbo\Tables\login_security_question.sql" />
+    <Build Include="dbo\Tables\travel_request_member.sql" />
+    <Build Include="dbo\Tables\client_logo.sql" />
+    <Build Include="dbo\Tables\login_status.sql" />
+    <Build Include="dbo\Tables\gg_notification_val_type.sql" />
+    <Build Include="dbo\Tables\login_user_type.sql" />
+    <Build Include="dbo\Tables\relationship.sql" />
+    <Build Include="dbo\Tables\travel_request_reason.sql" />
+    <Build Include="dbo\Tables\co_email.sql" />
+    <Build Include="dbo\Tables\gg_notification_log_addl_val.sql" />
+    <Build Include="dbo\Tables\nei_site.sql" />
+    <Build Include="dbo\Tables\gg_form_disclaimer.sql" />
+    <Build Include="dbo\Tables\ee_er_item_online_bad.sql" />
+    <Build Include="dbo\Tables\ee_er_online.sql" />
+    <Build Include="dbo\Tables\gg_move_plan.sql" />
+    <Build Include="dbo\Tables\travel_request.sql" />
+    <Build Include="dbo\Tables\ee_move_plan_detail.sql" />
+    <Build Include="dbo\Tables\gg_video_links.sql" />
+    <Build Include="dbo\Views\ee_er_cat.sql" />
+    <Build Include="dbo\Views\nei_benefit.sql" />
+    <Build Include="dbo\Views\exp_code.sql" />
+    <Build Include="dbo\Views\ee_profile.sql" />
+    <Build Include="dbo\Views\ee_dest_contact.sql" />
+    <Build Include="dbo\Views\ee_orig_contact.sql" />
+    <Build Include="dbo\Views\ee_er_online_bcm.sql" />
+    <Build Include="dbo\Views\ee_er_multi_curr_summary.sql" />
+    <Build Include="dbo\Views\ee_er_summary_online_OLD.sql" />
+    <Build Include="dbo\Views\co_company.sql" />
+    <Build Include="dbo\Views\ee_er_item_online_summary.sql" />
+    <Build Include="dbo\Views\ee_contact.sql" />
+    <Build Include="dbo\Views\transfer_orbit.sql" />
+    <Build Include="dbo\Views\transfer_old_home.sql" />
+    <Build Include="dbo\Views\transfer_new_home.sql" />
+    <Build Include="dbo\Views\ee_profile_online.sql" />
+    <Build Include="dbo\Views\ee_er_online_NEW.sql" />
+    <Build Include="dbo\Views\counselor.sql" />
+    <Build Include="dbo\Views\ee_er_item_online_NEW.sql" />
+    <Build Include="dbo\Views\currency_codes.sql" />
+    <Build Include="dbo\Views\company_policy_description.sql" />
+    <Build Include="dbo\Views\ee_policy_benefit.sql" />
+    <Build Include="dbo\Views\co_policy_bene.sql" />
+    <Build Include="dbo\Views\nei_login.sql" />
+    <Build Include="dbo\Views\exp_rpt_multi_currency.sql" />
+    <Build Include="dbo\Views\ee_eval_rqst.sql" />
+    <Build Include="dbo\Views\exp_group.sql" />
+    <Build Include="dbo\Views\company.sql" />
+    <Build Include="dbo\Views\ee_profile_test.sql" />
+    <Build Include="dbo\Views\transfer_policy_benefit.sql" />
+    <Build Include="dbo\Views\nei_counselor.sql" />
+    <Build Include="dbo\Views\co_policy.sql" />
+    <Build Include="dbo\Views\ee_job.sql" />
+    <Build Include="dbo\Views\ee_et_done_ltr.sql" />
+    <Build Include="dbo\Views\nei_web_form.sql" />
+    <Build Include="dbo\Views\ee_et_done_ltr_rpt.sql" />
+    <Build Include="dbo\Views\ee_web_form.sql" />
+    <Build Include="dbo\Views\exp_rpt_denied.sql" />
+    <Build Include="dbo\Views\web_city.sql" />
+    <Build Include="dbo\Views\ee_et_rtr_log.sql" />
+    <Build Include="dbo\Views\ee_sp_contact.sql" />
+    <Build Include="dbo\Views\ee_er_denied.sql" />
+    <Build Include="dbo\Views\ee_web_form_except.sql" />
+    <Build Include="dbo\Views\ee_er_multi_curr.sql" />
+    <Build Include="dbo\Views\travel_request_summ.sql" />
+    <Build Include="dbo\Views\co_profile_counselor_addittonal_info.sql" />
+    <Build Include="dbo\Views\ee_er_summary_online.sql" />
+    <Build Include="dbo\Views\ee_er.sql" />
+    <Build Include="dbo\Views\ee_profile_counselor_additional_info.sql" />
+    <Build Include="dbo\Views\co_login_note.sql" />
+    <Build Include="dbo\Views\ee_er_summary_online_snc.sql" />
+    <Build Include="dbo\Views\nei_country.sql" />
+    <Build Include="dbo\Views\ee_cono.sql" />
+    <Build Include="dbo\Views\nei_state.sql" />
+    <Build Include="dbo\Views\co_login_note_xref.sql" />
+    <Build Include="dbo\Views\ee_er_item.sql" />
+    <Build Include="dbo\Views\ee_er_item_summary_online.sql" />
+    <Build Include="dbo\Views\ventype.sql" />
+    <Build Include="dbo\Views\sp_type.sql" />
+    <Build Include="Security\NEIRELOCATION_Gateway Developer.sql" />
+    <Build Include="Security\NEIRELOCATION_Gateway Developer_1.sql" />
+    <Build Include="Security\NEIRELOCATION_Senior Gateway Developer.sql" />
+    <Build Include="Security\NEIRELOCATION_DKW01.sql" />
+    <Build Include="Security\NEIRELOCATION_DKW01_1.sql" />
+    <Build Include="Security\NEIRELOCATION_PXB01.sql" />
+    <Build Include="Security\NEIRELOCATION_PXB01_1.sql" />
+    <Build Include="Security\GatewayAdmin.sql" />
+    <Build Include="Security\GatewayAdmin_1.sql" />
+    <Build Include="Security\NEIRELOCATION_JXP01.sql" />
+    <Build Include="Security\NEIRELOCATION_JXP01_1.sql" />
+    <Build Include="Security\NEIRELOCATION_Reporting.sql" />
+    <Build Include="Security\NEIRELOCATION_Reporting_1.sql" />
+    <Build Include="Security\NEIRELOCATION_SQL Developers.sql" />
+    <Build Include="Security\NEIRELOCATION_SQL Developers_1.sql" />
+    <Build Include="Security\NEIRELOCATION_GTM01.sql" />
+    <Build Include="Security\NEIRELOCATION_GTM01_1.sql" />
+    <Build Include="Security\cold_fusion.sql" />
+    <Build Include="Security\cold_fusion_1.sql" />
+    <Build Include="Security\NEIRELOCATION_DXS01.sql" />
+    <Build Include="Security\NEIRELOCATION_SXC02.sql" />
+    <Build Include="Security\NEIRELOCATION_SXC02_1.sql" />
+    <Build Include="Security\NEIRELOCATION_JET01.sql" />
+    <Build Include="Security\NEIRELOCATION_AAH01.sql" />
+    <Build Include="Security\NEIRELOCATION_SRJ01.sql" />
+    <Build Include="Security\NEIRELOCATION_Gateway Release Manager.sql" />
+    <Build Include="Security\NEIRELOCATION_MNM01.sql" />
+    <Build Include="Security\NEIRELOCATION_MNM01_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\get_CONO.sql" />
+    <Build Include="dbo\Functions\parse_list.sql" />
+    <Build Include="dbo\Stored Procedures\get_co_pref_date_format.sql" />
+    <Build Include="dbo\Stored Procedures\insert_utility_log.sql" />
+    <Build Include="dbo\Stored Procedures\get_sp_contact.sql" />
+    <Build Include="dbo\Stored Procedures\get_savedexpense_report.sql" />
+    <Build Include="dbo\Stored Procedures\create_ee_er_online.sql" />
+    <Build Include="dbo\Stored Procedures\get_submitExpense_report.sql" />
+    <Build Include="dbo\Stored Procedures\read_ee_er_online.sql" />
+    <Build Include="dbo\Stored Procedures\get_country_list.sql" />
+    <Build Include="dbo\Stored Procedures\get_gg_nav.sql" />
+    <Build Include="dbo\Stored Procedures\create_ee_er_item_online.sql" />
+    <Build Include="dbo\Stored Procedures\get_state_list.sql" />
+    <Build Include="dbo\Stored Procedures\get_gg_nav_2.sql" />
+    <Build Include="dbo\Stored Procedures\get_transferee_paidthrupay_info.sql" />
+    <Build Include="dbo\Stored Procedures\get_account_executive_email.sql" />
+    <Build Include="dbo\Stored Procedures\read_login.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_general_doc.sql" />
+    <Build Include="dbo\Stored Procedures\update_ee_er_item_online.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_general_doc_by_filter_Type.sql" />
+    <Build Include="dbo\Stored Procedures\read_ee_er_item_online.sql" />
+    <Build Include="dbo\Stored Procedures\get_submittedExpense_reportItems.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_account_exec_info.sql" />
+    <Build Include="dbo\Stored Procedures\delete_ee_profile_online.sql" />
+    <Build Include="dbo\Stored Procedures\get_expense_report.sql" />
+    <Build Include="dbo\Stored Procedures\read_refresh_token.sql" />
+    <Build Include="dbo\Stored Procedures\get_transferee_Info.sql" />
+    <Build Include="dbo\Stored Procedures\insert_refresh_token.sql" />
+    <Build Include="dbo\Stored Procedures\get_counselor_Accounts_ex.sql" />
+    <Build Include="dbo\Stored Procedures\get_counselor_Assistant_Accounts_ex.sql" />
+    <Build Include="dbo\Stored Procedures\get_submitted_expense_report_toolkit.sql" />
+    <Build Include="dbo\Stored Procedures\create_loginnote.sql" />
+    <Build Include="dbo\Stored Procedures\get_currency_codes.sql" />
+    <Build Include="dbo\Stored Procedures\delete_ee_er_item_online.sql" />
+    <Build Include="dbo\Stored Procedures\delete_ee_er_online.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_portal_flag.sql" />
+    <Build Include="dbo\Stored Procedures\get_transferee_benefit_info.sql" />
+    <Build Include="dbo\Stored Procedures\read_ee_profile.sql" />
+    <Build Include="dbo\Stored Procedures\create_ee_move_plan_detail.sql" />
+    <Build Include="dbo\Stored Procedures\read_loginnote.sql" />
+    <Build Include="dbo\Stored Procedures\read_ee_move_plan_detail.sql" />
+    <Build Include="dbo\Stored Procedures\update_ee_move_plan_detail.sql" />
+    <Build Include="dbo\Stored Procedures\delete_ee_move_plan_detail.sql" />
+    <Build Include="dbo\Stored Procedures\populate_gg_move_plan.sql" />
+    <Build Include="dbo\Stored Procedures\create_ee_profile_online.sql" />
+    <Build Include="dbo\Stored Procedures\create_ee_svc_detail.sql" />
+    <Build Include="dbo\Stored Procedures\populate_ee_move_plan_detail.sql" />
+    <Build Include="dbo\Stored Procedures\read_ee_svc_detail.sql" />
+    <Build Include="dbo\Stored Procedures\get_transferee_origrcpt_info.sql" />
+    <Build Include="dbo\Stored Procedures\update_ee_svc_detail.sql" />
+    <Build Include="dbo\Stored Procedures\populate_gg_svc_cart.sql" />
+    <Build Include="dbo\Stored Procedures\delete_ee_svc_detail.sql" />
+    <Build Include="dbo\Stored Procedures\populate_ee_svc_detail.sql" />
+    <Build Include="dbo\Stored Procedures\populate_login_status.sql" />
+    <Build Include="dbo\Stored Procedures\get_transferee_ach_check_display_option.sql" />
+    <Build Include="dbo\Stored Procedures\update_ee_er_online.sql" />
+    <Build Include="dbo\Stored Procedures\populate_login_user_type.sql" />
+    <Build Include="dbo\Stored Procedures\read_gg_ee_calendar.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_rtr_doc.sql" />
+    <Build Include="dbo\Stored Procedures\delete_gg_ee_calendar.sql" />
+    <Build Include="dbo\Stored Procedures\update_gg_ee_calendar.sql" />
+    <Build Include="dbo\Stored Procedures\get_allcounselors.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_eval_link_bool.sql" />
+    <Build Include="dbo\Stored Procedures\read_ee_eval_openlink.sql" />
+    <Build Include="dbo\Stored Procedures\read_gg_pwd_log.sql" />
+    <Build Include="dbo\Stored Procedures\create_et_done_letter_sent.sql" />
+    <Build Include="dbo\Stored Procedures\delete_et_done_letter_sent.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_contact.sql" />
+    <Build Include="dbo\Stored Procedures\read_et_done_letter_sent.sql" />
+    <Build Include="dbo\Stored Procedures\update_et_done_letter_sent.sql" />
+    <Build Include="dbo\Stored Procedures\create_gg_notification_log.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_er_item_online_list.sql" />
+    <Build Include="dbo\Stored Procedures\check_gg_password.sql" />
+    <Build Include="dbo\Stored Procedures\read_co_email.sql" />
+    <Build Include="dbo\Stored Procedures\read_gg_notification_log.sql" />
+    <Build Include="dbo\Stored Procedures\get_cono_web_travel_form_info.sql" />
+    <Build Include="dbo\Stored Procedures\create_co_email.sql" />
+    <Build Include="dbo\Stored Procedures\update_co_email.sql" />
+    <Build Include="dbo\Stored Procedures\create_gg_notification_log_addl_val.sql" />
+    <Build Include="dbo\Stored Procedures\get_gg_valid_pwd.sql" />
+    <Build Include="dbo\Stored Procedures\read_anyTransferLogins.sql" />
+    <Build Include="dbo\Stored Procedures\delete_co_email.sql" />
+    <Build Include="dbo\Stored Procedures\read_gg_notification_log_addl_val.sql" />
+    <Build Include="dbo\Stored Procedures\create_gg_form_disclaimer.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_company_info.sql" />
+    <Build Include="dbo\Stored Procedures\delete_gg_form_disclaimer.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_additionalContact_info.sql" />
+    <Build Include="dbo\Stored Procedures\read_gg_form_disclaimer.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_basic_info.sql" />
+    <Build Include="dbo\Stored Procedures\update_ee_profile_online.sql" />
+    <Build Include="dbo\Stored Procedures\update_gg_form_disclaimer.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_profile_online.sql" />
+    <Build Include="dbo\Stored Procedures\read_ee_profile_online.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_login.sql" />
+    <Build Include="dbo\Stored Procedures\populate_login_tables.sql" />
+    <Build Include="dbo\Stored Procedures\populate_security_qa.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_web_travel_form_info.sql" />
+    <Build Include="dbo\Stored Procedures\create_travel_request.sql" />
+    <Build Include="dbo\Stored Procedures\delete_travel_request.sql" />
+    <Build Include="dbo\Stored Procedures\read_travel_request.sql" />
+    <Build Include="dbo\Stored Procedures\read_ee_doc.sql" />
+    <Build Include="dbo\Stored Procedures\create_ee_doc.sql" />
+    <Build Include="dbo\Stored Procedures\update_ee_LOGIN.sql" />
+    <Build Include="dbo\Stored Procedures\update_ee_doc.sql" />
+    <Build Include="dbo\Stored Procedures\create_gg_pwd_log.sql" />
+    <Build Include="dbo\Stored Procedures\get_co_login_note.sql" />
+    <Build Include="dbo\Stored Procedures\delete_ee_doc.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_disclaim.sql" />
+    <Build Include="dbo\Stored Procedures\get_company_name_list.sql" />
+    <Build Include="dbo\Stored Procedures\insert_co_logo_fileName.sql" />
+    <Build Include="dbo\Stored Procedures\get_counselor_List.sql" />
+    <Build Include="dbo\Stored Procedures\read_co_logo.sql" />
+    <Build Include="dbo\Stored Procedures\update_travel_request.sql" />
+    <Build Include="dbo\Stored Procedures\get_ee_et_done_ltr_rpt_detail.sql" />
+    <Build Include="dbo\Stored Procedures\get_gg_video_links.sql" />
+    <Build Include="NEIRELOCATION_SRJ01\User Defined Types\return_table1.sql" />
+    <Build Include="Security\Navigation.sql" />
+    <Build Include="Security\NEIRELOCATION_DXS01_1.sql" />
+    <Build Include="Security\NEIRELOCATION_JXP01_2.sql" />
+    <Build Include="Security\NEIRELOCATION_MNM01_2.sql" />
+    <Build Include="Security\NEIRELOCATION_PXB01_2.sql" />
+    <Build Include="Security\NEIRELOCATION_SRJ01_1.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_er_online_GGT.sql" />
+    <Build Include="dbo\Synonyms\syn_gg_video_links.sql" />
+    <Build Include="dbo\Synonyms\syn_transfer_new_home.sql" />
+    <Build Include="dbo\Synonyms\syn_Exp_Rpt_Denied.sql" />
+    <Build Include="dbo\Synonyms\syn_er_wksht.sql" />
+    <Build Include="dbo\Synonyms\syn_exp_rpt_multi_currency.sql" />
+    <Build Include="dbo\Synonyms\syn_JOB_RELATED.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_eval_rqst.sql" />
+    <Build Include="dbo\Synonyms\syn_TRANSFER_OLD_HOME.sql" />
+    <Build Include="dbo\Synonyms\syn_TRANSFER_OLD_HOME_2.sql" />
+    <Build Include="dbo\Synonyms\syn_transfer_policy_benefits.sql" />
+    <Build Include="dbo\Synonyms\syn_master_detail.sql" />
+    <Build Include="dbo\Synonyms\syn_co_policy.sql" />
+    <Build Include="dbo\Synonyms\syn_voucher_his.sql" />
+    <Build Include="dbo\Synonyms\syn_ventype.sql" />
+    <Build Include="dbo\Synonyms\syn_transfer_orbit.sql" />
+    <Build Include="dbo\Synonyms\syn_expense_reports.sql" />
+    <Build Include="dbo\Synonyms\syn_vendor_location_contact.sql" />
+    <Build Include="dbo\Synonyms\syn_vendor_company.sql" />
+    <Build Include="dbo\Synonyms\syn_VISA_Immigration.sql" />
+    <Build Include="dbo\Synonyms\syn_Temp_Living.sql" />
+    <Build Include="dbo\Synonyms\syn_SettlingInService.sql" />
+    <Build Include="dbo\Synonyms\syn_Rent_Asst.sql" />
+    <Build Include="dbo\Synonyms\syn_transfer_data.sql" />
+    <Build Include="dbo\Synonyms\syn_Area_OrientHF.sql" />
+    <Build Include="dbo\Synonyms\syn_MTG_ASST.sql" />
+    <Build Include="dbo\Synonyms\syn_Listing.sql" />
+    <Build Include="dbo\Synonyms\syn_Language.sql" />
+    <Build Include="dbo\Synonyms\syn_HHG_MOVE_ALL.sql" />
+    <Build Include="dbo\Synonyms\syn_Homefind_Brokers.sql" />
+    <Build Include="dbo\Synonyms\syn_dest_service.sql" />
+    <Build Include="dbo\Synonyms\syn_cultural.sql" />
+    <Build Include="dbo\Synonyms\syn_appraisal.sql" />
+    <Build Include="dbo\Synonyms\syn_web_city.sql" />
+    <Build Include="dbo\Synonyms\syn_et_done_letter.sql" />
+    <Build Include="dbo\Synonyms\syn_papertrail_et.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_eval_svc.sql" />
+    <Build Include="dbo\Synonyms\syn_exp_codes.sql" />
+    <Build Include="dbo\Synonyms\syn_co_policy_web_form.sql" />
+    <Build Include="dbo\Synonyms\syn_trans_except.sql" />
+    <Build Include="dbo\Synonyms\syn_nei_web_form.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_et_rtr_log.sql" />
+    <Build Include="dbo\Synonyms\syn_counselor.sql" />
+    <Build Include="dbo\Synonyms\syn_nei_transfer_login.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_profile_online.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_auth2FactorLog.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_eval_sent_recd.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_Eval_Svc_Reports.sql" />
+    <Build Include="dbo\Synonyms\syn_loginNote.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_eval_openLink.sql" />
+    <Build Include="dbo\Synonyms\syn_et_done_letter_sent.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_er_item_online.sql" />
+    <Build Include="dbo\Synonyms\syn_erOnline_Rpt.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_er_online.sql" />
+    <Build Include="dbo\Synonyms\syn_anytransferlogins.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_move_plan_detail.sql" />
+    <Build Include="dbo\Synonyms\syn_transfer_login.sql" />
+    <Build Include="dbo\Synonyms\syn_transfer_login_pwdLog.sql" />
+    <Build Include="dbo\Synonyms\syn_Homefinding.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_doc.sql" />
+    <Build Include="dbo\Synonyms\syn_currency_code.sql" />
+    <Build Include="dbo\Synonyms\syn_nei_country.sql" />
+    <Build Include="dbo\Synonyms\syn_nei_benefit.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_svc_detail.sql" />
+    <Build Include="dbo\Synonyms\syn_nei_counselor.sql" />
+    <Build Include="dbo\Synonyms\syn_nei_state.sql" />
+    <Build Include="dbo\Synonyms\syn_expense_report_cat.sql" />
+    <Build Include="dbo\Synonyms\syn_exp_group.sql" />
+    <Build Include="dbo\Synonyms\syn_company.sql" />
+    <Build Include="dbo\Synonyms\syn_company_policy_descriptions.sql" />
+    <Build Include="dbo\Synonyms\syn_erOnline_Items.sql" />
+    <Build Include="dbo\Synonyms\syn_co_login_note_xref.sql" />
+    <Build Include="dbo\Synonyms\syn_co_login_note.sql" />
+    <Build Include="dbo\Synonyms\syn_ee_er_item_online_GGT.sql" />
+  </ItemGroup>
+</Project>
