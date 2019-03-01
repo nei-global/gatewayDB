@@ -16,7 +16,7 @@ BEGIN
 	set nocount on
 
 	if (@begin_date is null)
-		set @begin_date = getdate()
+		set @begin_date = dateadd(day,1,getdate())
 
 	insert into co_email(cono, 
 		nei_site, 
