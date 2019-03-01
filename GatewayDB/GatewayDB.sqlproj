@@ -396,5 +396,6 @@
     <Build Include="dbo\Synonyms\syn_co_login_note_xref.sql" />
     <Build Include="dbo\Synonyms\syn_co_login_note.sql" />
     <Build Include="dbo\Synonyms\syn_ee_er_item_online_GGT.sql" />
+    <Build Include="dbo\Tables\DemoTable.sql" />
   </ItemGroup>
 </Project>
